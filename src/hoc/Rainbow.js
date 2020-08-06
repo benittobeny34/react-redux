@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 const Rainbow = (WrappedComponent) => {
 	const colours = ['pink','red','orange','blue','green','yellow'];

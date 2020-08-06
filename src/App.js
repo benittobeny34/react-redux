@@ -15,11 +15,10 @@ function App() {
   	<BrowserRouter>
     <div className="App">
       <Navbar/> 
-      <Route exact path='/' component={Home}></Route>
-      <Route path='/about' component={About}></Route>
-      <Route path='/contact' component={Contact}></Route>
-      <Route path='/:post_id' component={Post}></Route>
-
+      <Route exact path="/" component={Home}></Route>
+      <Route path="/about" component={About}></Route>
+      <Route path="/contact" component={Contact}></Route>
+      <Route path="/:post_id" component={Post}></Route>
     </div>
     </BrowserRouter>
   );

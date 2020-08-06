@@ -1,20 +1,33 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class Post extends Component {
 	state = {
-		id:null
+		post:null
 	}
   componentDidMount(){
    let id = this.props.match.params.post_id;
-    console.log(this.props);
+    axios.get("https://jsonplaceholder.typicode.com/posts/"+id).then(res => {
     this.setState({
-    	id:id
+    	post:res.data
+      })
+    // console.log(res.data)
     })
+   
   }
+
     render() {
+    	const post_details = this.state.post ? (
+   	 <div className="post">
+   	   <h1 className="center">{this.state.post.title}</h1>
+   	   <p>{this.state.post.body}</p>
+   	 </div>
+   	) : (
+   	 <h4 className="center">No post Exist for this id</h4>
+   	); 
         return (
             <div className="container">
-            	<h4>route parameter:{this.state.id}</h4>
+            	{post_details}
             </div>
         );
     }
